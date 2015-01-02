@@ -5,10 +5,12 @@ A Clojure library designed to validate credit card numbers using the [Luhn algor
 ## Usage
 
 ```clojure
-(validate-number 49927398716)
+(clj-luhm/valid? 49927398716)
 ;=> true
-(validate-number 79927398710)
+(clj-luhm/valid? 79927398710)
 ;=> false
+(clj-luhm/check-digit 79927398710)
+;=> 3
 ```
 
 ## Installation

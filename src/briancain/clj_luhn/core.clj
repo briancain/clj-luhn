@@ -5,8 +5,8 @@
   [number]
   (vec (map #(Character/digit % 10)  (str number))))
 
-(defn- product-or-double
-  "Returns double of product unless number > 9 (in which it returns the num of the two digits in its product"
+(defn- double-or-sum
+  "Returns double of product unless number > 9 (in which it returns the num of the two digits in its product)"
   [number]
   (let [number-double (* number 2)]
     (if (> number-double 9)
@@ -18,15 +18,31 @@
   [ccn]
   (map-indexed
     #(if (zero? (mod (inc %1 ) 2))
-       (product-or-double %2)
+       (double-or-sum %2)
        %2)
     ccn))
 
-(defn validate-number
+(defn- validate-number
   "Validates a given credit card number using the Luhn Algorithm"
   [ccn]
   (let [expanded-ccn (expand-to-digits ccn)
         ccn-seq (double-every-other expanded-ccn)
         ccn-sum (reduce + ccn-seq)
-        mod10-ans (mod ccn-sum 10) ]
-    (= mod10-ans 0)))
+        mod10-ans (mod ccn-sum 10)]
+    (mod (->> (expand-to-digits ccn)
+         (double-every-other)
+         (reduce +)) 10)))
+
+(defn check-digit
+  "Calculates luhn algorithm and retreives check number"
+  [ccn]
+  (let [expanded-ccn (expand-to-digits ccn)
+        ccn-seq (double-every-other expanded-ccn)
+        ccn-sum (reduce + ccn-seq) ]
+    (mod (* ccn-sum 9) 10)))
+
+(defn valid?
+  "Checks if the passed in ccn is valid"
+  [ccn]
+  (= (validate-number ccn) 0))
+
