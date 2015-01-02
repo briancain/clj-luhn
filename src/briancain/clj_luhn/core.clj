@@ -25,7 +25,7 @@
 (defn- validate-number
   "Validates a given credit card number using the Luhn Algorithm"
   [ccn]
-  (let [expanded-ccn (expand-to-digits ccn)
+  (let [expanded-ccn (rseq (expand-to-digits ccn))
         ccn-seq (double-every-other expanded-ccn)
         ccn-sum (reduce + ccn-seq)
         mod10-ans (mod ccn-sum 10)]
