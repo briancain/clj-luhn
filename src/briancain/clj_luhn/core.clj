@@ -1,11 +1,11 @@
-(ns clj-luhn.core)
+(ns briancain.clj-luhn.core)
 
-(defn expand-to-digits
+(defn- expand-to-digits
   "Takes a number like 12345 and returns a vector [1 2 3 4 5]"
   [number]
   (vec (map #(Character/digit % 10)  (str number))))
 
-(defn product-or-double
+(defn- product-or-double
   "Returns double of product unless number > 9 (in which it returns the num of the two digits in its product"
   [number]
   (let [number-double (* number 2)]
@@ -13,7 +13,7 @@
       (reduce + (expand-to-digits number-double))
       number-double)))
 
-(defn double-every-other
+(defn- double-every-other
   "Doubles every other number in the card sequence"
   [ccn]
   (map-indexed

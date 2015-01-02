@@ -1,6 +1,6 @@
-(ns clj-luhn.core-test
+(ns briancain.clj-luhn.core-test
   (:require [clojure.test :refer :all]
-            [clj-luhn.core :refer :all]))
+            [briancain.clj-luhn.core :refer :all]))
 
 (deftest validate-number-test
   (testing "if a credit card number is valid"

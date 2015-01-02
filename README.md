@@ -1,14 +1,19 @@
 # clj-luhn
 
-A Clojure library designed to ... well, that part is up to you.
+A Clojure library designed to validate credit card numbers using the [Luhn algorithm](http://en.wikipedia.org/wiki/Luhn_algorithm).
 
 ## Usage
 
-FIXME
+```clojure
+(validate-number 49927398716)
+;=> true
+(validate-number 79927398710)
+;=> false
+```
 
 ## License
 
-Copyright © 2015 FIXME
+Copyright © 2015 Brian Cain
 
 Distributed under the Eclipse Public License either version 1.0 or (at
 your option) any later version.
