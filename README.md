@@ -11,6 +11,10 @@ A Clojure library designed to validate credit card numbers using the [Luhn algor
 ;=> false
 ```
 
+## Installation
+
+[![Clojars Project](http://clojars.org/clj-luhn/latest-version.svg)](http://clojars.org/clj-luhn)
+
 ## License
 
 Copyright © 2015 Brian Cain
