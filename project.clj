@@ -1,4 +1,4 @@
-(defproject clj-luhn "0.1.2"
+(defproject clj-luhn "0.1.3"
   :description "A clojure library to validate credit card numbers using the luhn algorithm"
   :url "http://github.com/briancain/clj-luhn"
   :license {:name "Eclipse Public License"

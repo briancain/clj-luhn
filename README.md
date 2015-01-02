@@ -1,6 +1,6 @@
 # clj-luhn
 
-A Clojure library designed to validate credit card numbers using the [Luhn algorithm](http://en.wikipedia.org/wiki/Luhn_algorithm).
+A Clojure library designed to validate credit card numbers that use the [Luhn algorithm](http://en.wikipedia.org/wiki/Luhn_algorithm).
 
 ## Usage
 
